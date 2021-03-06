@@ -8,7 +8,7 @@
 #          self.right = right
 
 class Solution:
-# Решение работает быстрее, но ест больше памяти
+# Faster, but takes more memory
 # Runtime: 36 ms, faster than 92.25%
 # Memory Usage: 16.2 MB, less than 38.80%
     def maxDepth_recursion(self, root: TreeNode) -> int:
@@ -19,13 +19,13 @@ class Solution:
         return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
 
 # Time Сomplexity:
-# - O(n), так как обходим все ноды ровно 1 раз
+# - O(n), we visit every node only once
 # Space Complexity:
-# - O(log n) в сбалансированном дереве
-# - O(n) в худшем случае
+# - O(log n) if case of balance tree
+# - O(n) in worst case
 
 
-# Решение работает медленее, но ест меньше памяти
+# Slower, but takes less memory
 # Runtime: 44 ms, faster than 49.47%
 # Memory Usage: 15.4 MB, less than 92.42%
 
@@ -44,7 +44,7 @@ def maxDepth_stack(self, root: TreeNode) -> int:
 		return depth
 
 # Time Сomplexity:
-# - O(n), так как обходим все ноды ровно 1 раз
+# - O(n), we visit every node only once
 # Space Complexity:
-# - O(log n) в сбалансированном дереве
-# - O(n) в худшем случае
+# - O(log n) if case of balance tree
+# - O(n) in worst case
