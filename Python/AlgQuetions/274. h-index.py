@@ -2,6 +2,7 @@
 
 from typing import List
 
+
 class Solution:
     def hIndex(self, citations: List[int]) -> int:
         """
@@ -15,6 +16,9 @@ class Solution:
 
         Returns:
             int: [description]
+
+        Time complexity: O(n)
+        Space complexity: O(n)
         """
         n = len(citations)
         cit_list = [0] * (n + 1)
@@ -26,10 +30,9 @@ class Solution:
                 cit_list[n] +=1
 
         total = 0
-        i = n
-
-        while i <= 0:
-            total += cit_list[n]
+        i = n       
+        while i >= 0:
+            total += cit_list[i]            
             if total >= i:
                 return i
             i -= 1
@@ -39,8 +42,8 @@ class Solution:
 def main():
     citations = [3,0,6,1,5]
     s = Solution
-    s.hIndex(citations)
-
+    print(s.hIndex(s, citations))
+    
 
 if __name__ == "__main__":
     main()
