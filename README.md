@@ -1,1 +1,1 @@
-# Katas
+# KatasAndAlgorithms
