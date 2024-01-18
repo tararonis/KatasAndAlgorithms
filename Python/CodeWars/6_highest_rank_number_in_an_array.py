@@ -1,5 +1,4 @@
 def multiplication_table(row, col):
-
     return [[(x + 1) * (y + 1) for x in range(col)] for y in range(row)]
 
 

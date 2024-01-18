@@ -26,7 +26,7 @@ def even_fibonacci_numbers(n: int) -> deque:
 def main():
     # a = even_fibonacci_numbers(20)
     # print(a)
-    print(even_fibonacci_numbers(4) == [0,2,8,34])
+    print(even_fibonacci_numbers(4) == [0, 2, 8, 34])
 
 
 if __name__ == "__main__":

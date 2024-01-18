@@ -37,7 +37,7 @@ def test_cases():
 
 def main():
     start = datetime.now()
-   
+
     for _ in range(2000000):
         test_cases()
 

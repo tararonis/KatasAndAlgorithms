@@ -1,7 +1,7 @@
 """https://www.codewars.com/kata/5839c48f0cf94640a20001d3/train/python"""
 
 
-def land_perimeter(arr:str) -> str:
+def land_perimeter(arr: str) -> str:
     p = 0
     for x in range(len(arr)):
         for y in range(len(arr[0])):
@@ -15,7 +15,7 @@ def land_perimeter(arr:str) -> str:
                     p -= 1
                 if (y != 0) and (arr[x][y - 1] == "X"):
                     p -= 1
-    return "Total land perimeter: %i" % p  
+    return "Total land perimeter: %i" % p
 
 
 def main():

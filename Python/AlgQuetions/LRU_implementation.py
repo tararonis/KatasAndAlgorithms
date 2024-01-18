@@ -1,7 +1,8 @@
 import time
 
+
 class Node:
-    def __init__(self, key:int, val:int):
+    def __init__(self, key: int, val: int):
         self.key = key
         self.val = val
         self.next = None
@@ -9,22 +10,20 @@ class Node:
 
 
 class LRUCache:
-
     cashe_limit = 3
 
     def __init__(self, func):
         self.func = func
         self.cashe = {}
-        self.head = Node(0,0)
-        self.tail = Node(0,0)
+        self.head = Node(0, 0)
+        self.tail = Node(0, 0)
         self.head.nect = self.tail
         self.tail.prev = self.head
-    
-    def __call__(self, *args, **kwargs):
 
+    def __call__(self, *args, **kwargs):
         if args in self.cashe:
             self.llist(args)
-            return f'Cached ...{self.cashe[args]}'
+            return f"Cached ...{self.cashe[args]}"
 
         if len(self.cashe) > self.cashe_limit:
             node = self.head.next
@@ -50,7 +49,7 @@ class LRUCache:
         node.prev = p
         node.next = self.tail
 
-    #If result in cache, move to top of Cache/linked list
+    # If result in cache, move to top of Cache/linked list
     def llist(self, args):
         current = self.head
         while True:
@@ -65,18 +64,20 @@ class LRUCache:
 
 @LRUCache
 def func(n):
-    print(f'Computing...{n}x{n}')
+    print(f"Computing...{n}x{n}")
     time.sleep(1)
-    return n*n
+    return n * n
+
 
 def main():
-    print(f'\nFunction: func')
-    print(func(4)) # Cache: {(4,): 16}
-    print(func(5)) # Cache: {(4,): 16, (5,): 25}
-    print(func(4)) # Cache: {(5,): 25, (4,): 16}
-    print(func(6)) # Cache: {(5,): 25, (4,): 16, (6,): 36}
-    print(func(7)) # Cache: {(4,): 16, (6,): 36, (7,): 49}
-    print(func(8)) # Cache: {(6,): 36, (7,): 49, (8,): 64}
+    print(f"\nFunction: func")
+    print(func(4))  # Cache: {(4,): 16}
+    print(func(5))  # Cache: {(4,): 16, (5,): 25}
+    print(func(4))  # Cache: {(5,): 25, (4,): 16}
+    print(func(6))  # Cache: {(5,): 25, (4,): 16, (6,): 36}
+    print(func(7))  # Cache: {(4,): 16, (6,): 36, (7,): 49}
+    print(func(8))  # Cache: {(6,): 36, (7,): 49, (8,): 64}
+
 
 if __name__ == "__main__":
     main()

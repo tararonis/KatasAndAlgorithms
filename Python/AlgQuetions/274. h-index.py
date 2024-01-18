@@ -1,4 +1,4 @@
-#https://leetcode.com/problems/h-index/
+# https://leetcode.com/problems/h-index/
 
 from typing import List
 
@@ -8,7 +8,7 @@ class Solution:
         """
         According to the definition of h-index on Wikipedia:
          "A scientist has index h if h of his/her N papers have
-          at least h citations each, and the other N − h papers 
+          at least h citations each, and the other N − h papers
           have no more than h citations each."
 
         Args:
@@ -25,14 +25,14 @@ class Solution:
 
         for cit in citations:
             if cit < n:
-                cit_list[cit] +=1
+                cit_list[cit] += 1
             else:
-                cit_list[n] +=1
+                cit_list[n] += 1
 
         total = 0
-        i = n       
+        i = n
         while i >= 0:
-            total += cit_list[i]            
+            total += cit_list[i]
             if total >= i:
                 return i
             i -= 1
@@ -40,10 +40,10 @@ class Solution:
 
 
 def main():
-    citations = [3,0,6,1,5]
+    citations = [3, 0, 6, 1, 5]
     s = Solution
     print(s.hIndex(s, citations))
-    
+
 
 if __name__ == "__main__":
     main()
